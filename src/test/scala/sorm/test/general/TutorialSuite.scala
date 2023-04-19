@@ -1,15 +1,13 @@
 package sorm.test.general
 
-import org.scalatest.FunSuite
-import org.scalatest.matchers.ShouldMatchers
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
 import sorm._
 import sorm.test.MultiInstanceSuite
 
-@RunWith(classOf[JUnitRunner])
-class TutorialSuite extends FunSuite with ShouldMatchers with MultiInstanceSuite {
+
+class TutorialSuite extends AnyFunSuite with Matchers with MultiInstanceSuite {
 
   import TutorialSuite._
 

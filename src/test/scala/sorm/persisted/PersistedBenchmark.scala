@@ -19,7 +19,7 @@ object PersistedBenchmark extends App {
     var i = 0
     var l = List[C]()
     while (i < N) {
-      l = c.copy() :: l
+      l = c.copy :: l
       i += 1
     }
   }

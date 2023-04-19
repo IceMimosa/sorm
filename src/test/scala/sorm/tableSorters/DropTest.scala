@@ -6,13 +6,13 @@ import mappings._
 import sext._, embrace._
 import util.Random
 
-import org.scalatest.FunSuite
-import org.scalatest.matchers.ShouldMatchers
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-@RunWith(classOf[JUnitRunner])
-class DropTest extends FunSuite with ShouldMatchers {
+
+
+
+class DropTest extends AnyFunSuite with Matchers {
 
 
   import samples.ArtistModel._

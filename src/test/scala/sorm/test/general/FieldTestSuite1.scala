@@ -1,18 +1,17 @@
 package sorm.test.general
 
-import org.scalatest.{SequentialNestedSuiteExecution, FunSuite}
-import org.scalatest.matchers.ShouldMatchers
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
-
+import org.scalatest.SequentialNestedSuiteExecution
+import org.scalatest.matchers.should.Matchers
 import sorm._
 import core.DbType
-import sext._, embrace._
+import sext._
+import embrace._
 import org.joda.time._
+import org.scalatest.funspec.AnyFunSpec
 import sorm.test.TestingInstances
 
-@RunWith(classOf[JUnitRunner])
-class FieldTestSuite1 extends FunSuite with ShouldMatchers with SequentialNestedSuiteExecution {
+
+class FieldTestSuite1 extends AnyFunSpec with Matchers with SequentialNestedSuiteExecution {
   import FieldTestSuite1._
   def entities
     = Set() +
@@ -28,11 +27,11 @@ class FieldTestSuite1 extends FunSuite with ShouldMatchers with SequentialNested
       Entity[Album](unique = Set() + Seq("sourceId"))
   def instance( t: DbType ) = TestingInstances.instance(entities, t)
 
-  test("PostgreSQL initialization") { instance(DbType.Postgres).close() }
-  test("HSQLDB initialization") { instance(DbType.Hsqldb).close() }
-  test("H2 initialization") { instance(DbType.H2).close() }
-  test("MySQL initialization") { instance(DbType.Mysql).close() }
-  test("Oracle initialization") { instance(DbType.Oracle).close() }
+  describe("PostgreSQL initialization") { instance(DbType.Postgres).close() }
+  describe("HSQLDB initialization") { instance(DbType.Hsqldb).close() }
+  describe("H2 initialization") { instance(DbType.H2).close() }
+  describe("MySQL initialization") { instance(DbType.Mysql).close() }
+  describe("Oracle initialization") { instance(DbType.Oracle).close() }
 
 }
 object FieldTestSuite1 {

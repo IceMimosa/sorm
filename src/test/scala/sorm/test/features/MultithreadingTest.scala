@@ -1,9 +1,7 @@
 package sorm.test.features
 
-import org.scalatest.FunSuite
-import org.scalatest.matchers.ShouldMatchers
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
 import sorm._
 import sorm.test.MultiInstanceSuite
@@ -11,8 +9,8 @@ import sorm.test.MultiInstanceSuite
 object MultithreadingTest {
   case class A (a : Int)
 }
-@RunWith(classOf[JUnitRunner])
-class MultithreadingTest extends FunSuite with ShouldMatchers with MultiInstanceSuite {
+
+class MultithreadingTest extends AnyFunSuite with Matchers with MultiInstanceSuite {
   import MultithreadingTest._
 
   def entities =  Set() + Entity[A]()
