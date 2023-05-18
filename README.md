@@ -18,7 +18,7 @@
 <dependency>
     <groupId>org.sorm-framework</groupId>
     <artifactId>sorm</artifactId>
-    <version>0.3.22-NIO-SNAPSHOT</version>
+    <version>0.3.23-NIO-SNAPSHOT</version>
 </dependency>
 ```
 

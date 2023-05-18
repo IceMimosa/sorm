@@ -64,7 +64,7 @@ class ResultSetView
               case CHAR | VARCHAR     => rs.getString(i)
               case LONGVARCHAR        => rs.getString(i)
               case NUMERIC            => numeric(rs, i)
-              case DECIMAL            => rs.getBigDecimal(i) $ (new BigDecimal(_))
+              case DECIMAL            => rs.getBigDecimal(i) $ (o => Option(o).map(new BigDecimal(_)).orNull)
               case BIT                => rs.getBoolean(i)
               case TINYINT            => rs.getByte(i)
               case SMALLINT           => rs.getShort(i)
