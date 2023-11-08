@@ -6,7 +6,7 @@
 
   <groupId>org.sorm-framework</groupId>
   <artifactId>sorm</artifactId>
-  <version>0.3.22-GIO-SNAPSHOT</version>
+  <version>0.3.23-NIO-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>SORM</name>
@@ -46,14 +46,22 @@
 <!--  </distributionManagement>-->
   <distributionManagement>
     <repository>
-      <id>gio</id>
-      <url>http://10.0.1.190:8081/nexus/content/repositories/releases</url>
+      <id>maven-releases</id>
+      <name>maven-releases</name>
+      <url>https://artifactory.nioint.com/artifactory/dd-maven-releases-virtual</url>
     </repository>
     <snapshotRepository>
-      <id>gio</id>
-      <url>http://10.0.1.190:8081/nexus/content/repositories/snapshots</url>
+      <id>maven-snapshots</id>
+      <name>maven-snapshots</name>
+      <url>https://artifactory.nioint.com/artifactory/dd-maven-snapshots-virtual</url>
     </snapshotRepository>
   </distributionManagement>
+
+  <properties>
+    <scala.version>2.12.10</scala.version>
+    <scala.binary.version>2.12</scala.binary.version>
+    <guava.version>20.0</guava.version>
+  </properties>
 
   <dependencies>
     <dependency>
@@ -61,20 +69,20 @@
       <artifactId>c3p0</artifactId>
       <version>0.9.2-pre5</version>
     </dependency>
-    <dependency>
-      <groupId>com.github.nikita-volkov</groupId>
-      <artifactId>embrace</artifactId>
-      <version>[0.1.5,0.2)</version>
-    </dependency>
-    <dependency>
-      <groupId>com.github.nikita-volkov</groupId>
-      <artifactId>sext</artifactId>
-      <version>[0.2.4,0.3)</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.github.nikita-volkov</groupId>-->
+<!--      <artifactId>embrace</artifactId>-->
+<!--      <version>[0.1.5,0.2)</version>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>com.github.nikita-volkov</groupId>-->
+<!--      <artifactId>sext</artifactId>-->
+<!--      <version>[0.2.4,0.3)</version>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>joda-time</groupId>
       <artifactId>joda-time</artifactId>
-      <version>2.1</version>
+      <version>2.10.5</version>
     </dependency>
     <dependency>
       <groupId>org.joda</groupId>
@@ -85,12 +93,12 @@
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>13.0.1</version>
+      <version>${guava.version}</version>
     </dependency>
     <dependency>
       <groupId>com.typesafe.scala-logging</groupId>
-      <artifactId>scala-logging_2.11</artifactId>
-      <version>[3.4.0,4)</version>
+      <artifactId>scala-logging_${scala.binary.version}</artifactId>
+      <version>3.9.5</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -125,8 +133,8 @@
     </dependency>
     <dependency>
       <groupId>org.scalatest</groupId>
-      <artifactId>scalatest_2.11</artifactId>
-      <version>2.2.3</version>
+      <artifactId>scalatest_${scala.binary.version}</artifactId>
+      <version>3.2.3</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -138,17 +146,17 @@
     <dependency>
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-reflect</artifactId>
-      <version>[2.10,2.11.999)</version>
+      <version>${scala.version}</version>
     </dependency>
     <dependency>
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-library</artifactId>
-      <version>[2.10,2.11.999)</version>
+      <version>${scala.version}</version>
     </dependency>
     <dependency>
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-compiler</artifactId>
-      <version>[2.10,2.11.999)</version>
+      <version>${scala.version}</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>

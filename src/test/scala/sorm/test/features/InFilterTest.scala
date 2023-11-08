@@ -1,15 +1,12 @@
 package sorm.test.features
 
-import org.scalatest.{BeforeAndAfterAll, FunSuite}
-import org.scalatest.matchers.ShouldMatchers
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
-
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatest.matchers.should.Matchers
 import sorm._
 import sorm.test.MultiInstanceSuite
 
-@RunWith(classOf[JUnitRunner])
-class InFilterTest extends FunSuite with ShouldMatchers with MultiInstanceSuite {
+
+class InFilterTest extends AnyFunSpec with Matchers with MultiInstanceSuite {
   import InFilterTest._
 
   def entities = Set() + Entity[A]()
@@ -20,10 +17,10 @@ class InFilterTest extends FunSuite with ShouldMatchers with MultiInstanceSuite 
     val a2 = db.save(A(2))
     val a3 = db.save(A(3))
 
-    test(dbId + " - empty value"){
+    describe(dbId + " - empty value"){
       db.query[A].whereIn("a", Seq()).fetchOne().should(equal(None))
     }
-    test(dbId + " - valid value"){
+    describe(dbId + " - valid value"){
       db.query[A].whereIn("a", Seq(2)).fetchOne().should(equal(Some(a2)))
     }
 

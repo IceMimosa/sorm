@@ -2,9 +2,11 @@ package sorm.test.general
 
 import sorm._
 import org.scalatest._
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-@org.junit.runner.RunWith(classOf[junit.JUnitRunner])
-class EntityWithNoPrimitivesSuite extends FunSuite with ShouldMatchers {
+
+class EntityWithNoPrimitivesSuite extends AnyFunSuite with Matchers {
   import EntityWithNoPrimitivesSuite._
 
   test("All is fine"){

@@ -1,13 +1,13 @@
 package sorm.core
 
-import org.scalatest.FunSuite
-import org.scalatest.matchers.ShouldMatchers
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
 
-@RunWith(classOf[JUnitRunner])
-class PathSuite extends FunSuite with ShouldMatchers {
+
+
+
+class PathSuite extends AnyFunSuite with Matchers {
   
   import Path._
   
